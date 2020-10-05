@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TODO SIMPLE</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <h1 class="navbar">TODO SIMPLE</h1>
+    <div id="message"></div>
+    <script id="template-message" type="text/html">
+        <div class="message">
+            <h2>Success</h2>
+            <p>asdsd</p>
+        </div>
+    </script>
+    <div class="btnAdd">
+        <button id="btnAdd">Add</button>
+    </div>
+    <form id='form'>
+        <div class="btnClose" id="btnClose">
+            <h3>&times;</h3>
+        </div>
+        <h2>Add New Todo</h2>
+        <label>Title</label>
+        <input type="text" id="title" autocomplete="off" required>
+        <label>Description</label>
+        <input type="text" id="desc" autocomplete="off" required>
+        <label>Category</label>
+        <input type="text" id="cat" autocomplete="off" required>
+        <label>Priority</label>
+        <select id="prior">
+            <option value="">Choose..</option>
+            <option value="low">Low</option>
+            <option value="middle">Middle</option>
+            <option value="high">High</option>
+        </select>
+        <label>Deadline</label>
+        <input type="text" id="deadline" autocomplete="off" required>
+        <button class="button" type="submit">Add</button>
+        <button class="button" type="reset">Reset</button>
+    </form>
+    <ul id="list"></ul>
+    <script id="template-list" type="text/html">
+        <li class="high">
+            <small>asds</small>
+            <h2>asdd</h2>
+            <p>asdsd</p>
+            <div class="button">
+                <button data-id="" data-check>&check;</button>
+                <button data-id="" data-trash>&times;</button>
+            </div>
+        </li>
+    </script>
+
+
+    <script src="./Todo.js"></script>
+    <script src="./index.js"></script>
+</body>
+
+</html>
