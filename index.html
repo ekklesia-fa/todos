@@ -2,63 +2,93 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TODO SIMPLE</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SUPER SIMPLE TODOS</title>
+  <link rel="stylesheet" href="./w3.css">
+  <style>
+    li div {
+      background-color: white;
+    }
+    
+    li.done div {
+      background-color: rgb(178, 223, 169);
+    }
+    
+    li.done div div {
+      text-decoration-line: line-through;
+      text-decoration-color: palegreen;
+    }
+    
+    li.done .w3-button {
+      display: none;
+    }
+  </style>
 </head>
 
-<body>
-    <h1 class="navbar">TODO SIMPLE</h1>
-    <div id="message"></div>
-    <script id="template-message" type="text/html">
-        <div class="message">
-            <h2>Success</h2>
-            <p>asdsd</p>
+<body class="w3-light-gray">
+
+  <header class="w3-bar w3-black w3-xlarge">
+    <div class="w3-bar-item">SIMPLE TODOS</div>
+  </header>
+
+  <div class="w3-panel">
+    <div class="w3-light-gray">
+      <form>
+        <div class="w3-bar">
+          <input type="text" id="in_text" class="w3-input w3-bar-item w3-border" autocomplete="off" autofocus placeholder="New todo" style="width: 80%;">
+          <button type="submit" id="btnSubmit" class="w3-button w3-black w3-bar-item w3-right" style="width: 18%;">Add</button>
         </div>
-    </script>
-    <div class="btnAdd">
-        <button id="btnAdd">Add</button>
+      </form>
     </div>
-    <form id='form'>
-        <div class="btnClose" id="btnClose">
-            <h3>&times;</h3>
+  </div>
+
+  <div class="w3-container w3-border-top w3-text-gray">
+    Total : <span class="w3-text-black" id="countRow">0</span> rows
+  </div>
+
+  <ul class="w3-ul">
+  </ul>
+  <!-- <ul class="w3-ul">
+    <li>
+      <div class="w3-row w3-border w3-large">
+        <div class="w3-col" style="width: 68px;">
+          <img src="./tumb/tumb-1.jpg" alt="tumb-1" style="width: 60px;">
         </div>
-        <h2>Add New Todo</h2>
-        <label>Title</label>
-        <input type="text" id="title" autocomplete="off" required>
-        <label>Description</label>
-        <input type="text" id="desc" autocomplete="off" required>
-        <label>Category</label>
-        <input type="text" id="cat" autocomplete="off" required>
-        <label>Priority</label>
-        <select id="prior">
-            <option value="">Choose..</option>
-            <option value="low">Low</option>
-            <option value="middle">Middle</option>
-            <option value="high">High</option>
-        </select>
-        <label>Deadline</label>
-        <input type="text" id="deadline" autocomplete="off" required>
-        <button class="button" type="submit">Add</button>
-        <button class="button" type="reset">Reset</button>
-    </form>
-    <ul id="list"></ul>
-    <script id="template-list" type="text/html">
-        <li class="high">
-            <small>asds</small>
-            <h2>asdd</h2>
-            <p>asdsd</p>
-            <div class="button">
-                <button data-id="" data-check>&check;</button>
-                <button data-id="" data-trash>&times;</button>
-            </div>
-        </li>
-    </script>
+        <div class="w3-rest">
+          <div class="w3-tiny w3-text-gray">22 Agust 2020, 15:00</div>
+          <div class="w3">${data.text}</div>
+          <div class="w3-bar">
+            <button class="w3-button w3-bar-item w3-right w3-red" id="btnTrash" data-id="${data.id}">&times;</button>
+            <button class="w3-button w3-bar-item w3-right w3-green" id="btnCheck" data-id="${data.id}">&check;</button>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul> -->
 
 
-    <script src="./Todo.js"></script>
-    <script src="./index.js"></script>
+
+  <!-- <div class="w3-bar w3-border w3-large">
+    <div class="w3-bar-item">
+      <div class="w3-tiny w3-text-gray">${data.timeLocal}</div>
+      <div class="w3">${data.text}</div>
+    </div>
+    <div class="w3-bar-item w3-right">
+      <button class="w3-button w3-padding-small w3-green" id="btnCheck" data-id="${data.id}">&check;</button>
+      <button class="w3-button w3-padding-small w3-red" id="btnTrash" data-id="${data.id}">&times;</button>
+    </div>
+  </div> -->
+
+
+
+
+
+
+
+
+
+  <script src="./todo.js"></script>
 </body>
 
 </html>
