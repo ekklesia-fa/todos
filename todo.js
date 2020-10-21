@@ -67,9 +67,11 @@ const getLocalStorage = () => {
   if (data && data != '[]') {
     console.warn('Getting "my-todos"');
     todos = JSON.parse(data);
-    todos.forEach(todo => {
-      updateView(todo);
-    })
+    if(todos){
+      todos.forEach(todo => {
+        updateView(todo);
+      });
+    }
   }
 }
 
