@@ -64,7 +64,7 @@ const setLocalStorage = () => {
 
 const getLocalStorage = () => {
   const data = localStorage.getItem('my-todos');
-  if (data != '[]') {
+  if (data && data != '[]') {
     console.warn('Getting "my-todos"');
     todos = JSON.parse(data);
     todos.forEach(todo => {
