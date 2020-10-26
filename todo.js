@@ -67,11 +67,12 @@ const getLocalStorage = () => {
   if (data && data != '[]') {
     console.warn('Getting "my-todos"');
     todos = JSON.parse(data);
-    if(todos){
-      todos.forEach(todo => {
-        updateView(todo);
-      });
-    }
+    todos1 = todos.sort((a, b) => {
+      return b.check - a.check;
+    });
+    todos.forEach(todo => {
+      updateView(todo);
+    })
   }
 }
 
@@ -88,7 +89,7 @@ const setAction = () => {
         const kata = "Are you sure deleting ?";
         if (confirm(kata)) {
           console.log('sudah menghapus');
-          deleteElementItem(e.path[2]);
+          deleteElementItem(e.path[4]);
           deleteTodos(e.target.dataset.id);
         }
       });
@@ -100,7 +101,7 @@ const setAction = () => {
       num2 = num2 + 1
       btn.addEventListener('click', (e) => {
         console.log('sudah selesaikan');
-        checkElementItem(e.path[2]);
+        checkElementItem(e.path[4]);
         checkTodos(e.target.dataset.id);
       });
     }
@@ -123,7 +124,6 @@ const deleteElementItem = (elem) => {
 }
 
 const checkElementItem = (elem) => {
-  console.log(elem);
   elem.classList.add('done');
 }
 
